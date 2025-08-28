@@ -5,9 +5,9 @@
     <link rel="shortcut icon" href="https://files.ecatholic.com/1053/favicon.ico?t=1743454958000"></link>
     <script rel="script" src="registration.js"></script>
   </head>
-  <?php $children = 3; $maxChildren = 100; function childRow($rowNum) { ?>
+  <?php $children = 3; $maxChildren = 12; function childRow($rowNum) { ?>
        <tr id="row_<?php echo $rowNum?>">
-         <td><input type="text" id="name_<?php echo $rowNum?>"/></td>
+         <td><input type="text" id="name_<?php echo $rowNum?>" name="name_<?php echo $rowNum?>" placeholder="FirstName LastName"/></td>
             <td>
               <select id="dobm_<?php echo $rowNum?>" name="dobm_<?php echo $rowNum?>">
                 <option value="0">Month</option>
@@ -51,19 +51,24 @@
               <select id="grade_<?php echo $rowNum?>" name="grade_<?php echo $rowNum?>">
                 <option value="-1">Pre-K</option>
                 <option value="0">K</option>
-                <option value="0">1</option>
-                <option value="0">2</option>
-                <option value="0">3</option>
-                <option value="0">4</option>
-                <option value="0">5</option>
-                <option value="0">6</option>
-                <option value="0">7</option>
-                <option value="0">8</option>
-                <option value="0">9</option>
-                <option value="0">10</option>
-                <option value="0">11</option>
-                <option value="0">12</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
               </select>
+            </td>
+          </tr>
+          <tr id="row_<?php echo $rowNum?>a">
+            <td colspan="3">
+            <textarea type="text" id="restrictions_<?php echo $rowNum?>" name="restrictions_<?php echo $rowNum?>" placeholder="For Child #<?php echo $rowNum?>, please list any physical restrictions, limitations, or medical conditions this child may have which you feel is necessary information for the coaches."></textarea>
             </td>
           </tr>
     <?php } ?>
@@ -72,11 +77,11 @@
     <p>Thank you for your interest in our homeschool gym ministry, etc., etc.</p>
     <p>The information on this form will be used only for homeschool gym planning purposes and will be kept confidential.</p>
     <p class="disclaimer">Submission of this information does not guarantee your participation in homeschool gym.</p>
-    <form action="/submit_form.php" method="post">
+    <form action="reg_received.php" method="post">
       <h2>Contact Information</h2>
       <div class="contact">
-        <label for="pname">Name of Parents/Guardians:</label>
-        <input type="text" id="pname" name="pname"/>
+        <label for="pname">Name of Parent(s)/Guardian(s):</label>
+        <input type="text" id="pname" name="pname" placeholder="FirstName [and FirstName] LastName"/>
         <label for="address">Address:</label>
         <input type="text" id="address" name="address"/>
         <label for="city">City, State, Zip:</label>
@@ -86,12 +91,12 @@
         <label for="cellphone">Cell phone in case of emergency or urgent notification:</label>
         <input type="text" id="cellphone" name="cellphone"/>
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email"/>
+        <input type="email" id="email" name="email"/>
       </div>
       <h2>Participating Children</h2>
       <p>Please provide information about all children who will be participating in gym. For this purpose,
-        even children who will be eighteen by the end of the school year should be listed. Infants and
-        toddlers who will not participate in class need not be listed.</p>
+        even children who will be eighteen by the end of the school year should be listed.
+        Please do <i>not</i> include infants and toddlers who will not participate in class.
      <div class="numberOfChildren">
         <label for="count">Number of <i>Participating</i> Children:</label>
         <input type="number" min="1" max="<?php echo $maxChildren ?>" value="<?php echo $children ?>" id="count" name="count"/>
@@ -111,10 +116,6 @@
           ?>
         </tbody>
       </table>
-      <div>
-        <label for="children">Please list any physical restrictions/limitations your child(ren) may have which you feel is necessary information for the coaches (please include their names.)</label>
-        <div><textarea type="text" id="restrictions" name="restrictions"></textarea></div>
-      </div>
       <h2>About Your Family</h2>
       <div class="about">
         <label for="new">New to the gym ministry?</label>

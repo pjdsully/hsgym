@@ -11,6 +11,10 @@ window.onload = function() {
             else {
                 break;
             }
+	    const rowComments = document.getElementById('row_' + i + 'a');
+            if (rowComments) {
+                rowComments.style.display = (i <= count) ? 'table-row' : 'none';
+            }
         }
     };
 
