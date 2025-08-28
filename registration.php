@@ -7,10 +7,10 @@
   </head>
   <?php $children = 3; $maxChildren = 12; function childRow($rowNum) { ?>
        <tr id="row_<?php echo $rowNum?>">
-         <td><input type="text" id="name_<?php echo $rowNum?>" name="name_<?php echo $rowNum?>" placeholder="FirstName LastName"/></td>
+         <td><input required type="text" id="name_<?php echo $rowNum?>" name="name_<?php echo $rowNum?>" placeholder="FirstName LastName"/></td>
             <td>
               <select id="dobm_<?php echo $rowNum?>" name="dobm_<?php echo $rowNum?>">
-                <option value="0">Month</option>
+                <option value="" disabled selected hidden>Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
@@ -25,7 +25,7 @@
                 <option value="12">December</option>
               </select>
               <select id="doby_<?php echo $rowNum?>" name="doby_<?php echo $rowNum?>">
-                <option value="0">Year</option>
+                <option value="" disabled selected hidden>Year</option>
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
@@ -49,6 +49,7 @@
             </td>
             <td>
               <select id="grade_<?php echo $rowNum?>" name="grade_<?php echo $rowNum?>">
+                <option value="" disabled selected hidden>Grade</option>
                 <option value="-1">Pre-K</option>
                 <option value="0">K</option>
                 <option value="1">1</option>
@@ -81,17 +82,17 @@
       <h2>Contact Information</h2>
       <div class="contact">
         <label for="pname">Name of Parent(s)/Guardian(s):</label>
-        <input type="text" id="pname" name="pname" placeholder="FirstName [and FirstName] LastName"/>
+        <input required type="text" id="pname" name="pname" placeholder="FirstName [and FirstName] LastName"/>
         <label for="address">Address:</label>
-        <input type="text" id="address" name="address"/>
+        <input required type="text" id="address" name="address"/>
         <label for="city">City, State, Zip:</label>
-        <input type="text" id="city" name="city"/>
+        <input required type="text" id="city" name="city"/>
         <label for="telephone">Telephone:</label>
-        <input type="text" id="telephone" name="telephone"/>
+        <input required type="text" id="telephone" name="telephone"/>
         <label for="cellphone">Cell phone in case of emergency or urgent notification:</label>
         <input type="text" id="cellphone" name="cellphone"/>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"/>
+        <input required type="email" id="email" name="email"/>
       </div>
       <h2>Participating Children</h2>
       <p>Please provide information about all children who will be participating in gym. For this purpose,
@@ -99,7 +100,7 @@
         Please do <i>not</i> include infants and toddlers who will not participate in class.
      <div class="numberOfChildren">
         <label for="count">Number of <i>Participating</i> Children:</label>
-        <input type="number" min="1" max="<?php echo $maxChildren ?>" value="<?php echo $children ?>" id="count" name="count"/>
+        <input required type="number" min="1" max="<?php echo $maxChildren ?>" value="<?php echo $children ?>" id="count" name="count"/>
      </div>
       <table>
         <thead>
@@ -119,16 +120,16 @@
       <h2>About Your Family</h2>
       <div class="about">
         <label for="new">New to the gym ministry?</label>
-        <select id="new" name="new" value="1">
+        <select required id="new" name="new" value="1">
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <label for="years">How many years have you participated in this ministry?</label>
-        <input type="number" min="0" max="30" value="0" id="years" name="years"/>
+        <input required type="number" min="0" max="30" value="0" id="years" name="years"/>
         <label for="parish">Parish:</label>
-        <input type="text" id="parish" name="parish"/>
+        <input required type="text" id="parish" name="parish"/>
         <label for="pcity">City:</label>
-        <input type="text" id="pcity" name="pcity"/>
+        <input required type="text" id="pcity" name="pcity"/>
       </div>
      <div class="formFooter">
        <button type="submit">Submit Registration</button>

@@ -79,7 +79,7 @@
         <tbody>
           <?php
                 /* Generate table row for children */
-                for ($i = 1; $i <= 3; ++$i) {
+                for ($i = 1; $i <= $children; ++$i) {
                     childRow($i);
                 }
           ?>
