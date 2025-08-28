@@ -1,0 +1,74 @@
+label {
+    max-width: 40em;
+}
+
+.contact,.about {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 1em;
+    column-gap: 1.2em;
+}
+
+.contact,.about > label {
+    text-align: right;
+}
+
+div.numberOfChildren, div.formFooter {
+    text-align: center;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 2px solid #333; /* 2px solid dark gray border */
+    border-radius: 15px; /* Rounded corners with a 15px radius */
+    padding: 10px; /* Optional: Add some padding inside the element */
+    width: 100%; /* Optional: Set a width for the rectangle */
+}
+
+p.disclaimer {
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 8em;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+td > input {
+    width: 100%;
+}
+
+input, select {
+    font-size: 1.25rem;
+}
+
+/* Basic Table Styling */
+table {
+  width: 100%; /* Make the table take up the full width of its container */
+  border-collapse: collapse; /* Collapse borders between cells */
+  font-family: Arial, sans-serif; /* Set a common font */
+}
+
+/* Table Header Styling */
+th {
+  background-color: #4CAF50; /* Green background for headers */
+  color: white; /* White text color */
+  padding: 12px 15px; /* Padding for header cells */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ddd; /* Light gray border */
+}
+
+/* Table Data Cell Styling */
+td {
+  padding: 10px 15px; /* Padding for data cells */
+  border: 1px solid #ddd; /* Light gray border */
+}
+
+/* Alternating Row Colors (Zebra Stripes) */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+/* Hover Effect on Rows */
+tr:hover {
+  background-color: #ddd; /* Darker gray on hover */
+}
