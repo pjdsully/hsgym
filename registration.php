@@ -75,7 +75,7 @@
     <?php } ?>
   <body>
     <h1>Ste. Marie Parish Homeschool Gym Registration</h1>
-    <p>Thank you for your interest in our homeschool gym ministry, etc., etc.</p>
+    <p>Thank you for your interest in our homeschool gym ministry.</p>
     <p>The information on this form will be used only for homeschool gym planning purposes and will be kept confidential.</p>
     <p class="disclaimer">Submission of this information does not guarantee your participation in homeschool gym.</p>
     <form action="reg_received.php" method="post">

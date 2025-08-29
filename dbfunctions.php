@@ -9,6 +9,15 @@ $dbusername = $config["db"]["username"];
 $dbpassword = $config["db"]["password"];
 $db = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
 
+// TODO: Generalize this. It is dep. on my network specifically
+function requestIsInternal() {
+    if (php_sapi_name() === 'cli') {
+        return true;
+    }
+    $remoteIP = $_SERVER['REMOTE_ADDR'];
+    return preg_match('/^10\.0\.0\./', $remoteIP);
+}
+
 function insertParticipant($family, $rowNum) {
     global $db;
 
